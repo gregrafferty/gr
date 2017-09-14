@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export default ({ data }) => {
   const post = data.markdownRemark
@@ -7,6 +7,9 @@ export default ({ data }) => {
       <h1>
         {post.frontmatter.title}
       </h1>
+      {
+        (post.frontmatter.image) ? <img src={post.frontmatter.image.relativePath} alt="" /> : null
+      }
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </div>
   )
@@ -18,6 +21,9 @@ export const query = graphql`
       html
       frontmatter {
         title
+        image {
+          relativePath
+        }
       }
     }
   }`

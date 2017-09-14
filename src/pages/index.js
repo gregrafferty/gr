@@ -1,8 +1,9 @@
 import React from "react"
 import g from "glamorous"
 
-import { rhythm } from "../utils/typography"
-import Link from "gatsby-link"
+import { rhythm } from '../utils/typography';
+import Link from 'gatsby-link';
+import Helmet from 'react-helmet';
 
 export default ({ data }) => {
     console.log(data)
@@ -11,6 +12,9 @@ export default ({ data }) => {
 
     return (
         <div>
+            <Helmet>
+                <title>Greg Rafferty Site</title>
+            </Helmet>
             <g.H1 display={"inline-block"} borderBottom={"1px solid"}>
                 Photography, Web and Tech
             </g.H1>
